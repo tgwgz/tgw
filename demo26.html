@@ -23,6 +23,10 @@
 					// alert($("#sal").val())
 					let sal = $("#sal").val()
 					// alert(typeof sal)
+					if(sal ==""||sal ==null||sal.length==0）
+					   {
+					   alert（"请输入工资")
+				}else{
 					sal = parseInt(sal)
 					// alert(typeof sal)
 					let old1 = sal*0.08
@@ -56,6 +60,7 @@
 					let gshj = old2+yl2+sy2+gs+sy+gjj2
 					$("#gshj").text(gshj)
 					$("#ze").text(grhj+gshj)
+				}
 					
 				})
 			})
@@ -65,7 +70,7 @@
 	<body>
 		<div class="container">
 			<h3 class="text-danger text-center">社保计算器-Web版</h3>
-			<p class="text-center">太原工业学院&nbsp;&nbsp;电子工程系&nbsp;&nbsp;182027204李资政</p>
+			<p class="text-center">太原工业学院&nbsp;&nbsp;电子工程系&nbsp;&nbsp;182027224陶冠闻</p>
 			<div class="tableDiv container" >
 			    <table class="table table-bordered table-striped text-center">
 					<tr>
