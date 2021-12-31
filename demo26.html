@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		    <meta charset="UTF-8">
+		    <title>社保计算器</title>
+		    <!--
+		    width=device-width表示宽度和设备同宽
+		    initial-scale=1表示屏幕有多大就显示多大
+		    minimum-scale=1表示最小允许的缩放比例
+		    maximum-scale=1表示最大允许的缩放比例
+		    user-scalable=no 表示网页不可以伸缩， 值为yes表示可以伸缩
+		    -->
+		    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" >
+		    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+			<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					// alert($("#sal").val())
+					let sal = $("#sal").val()
+					// alert(typeof sal)
+					sal = parseInt(sal)
+					// alert(typeof sal)
+					let old1 = sal*0.08
+					$("#old1").text(old1)
+					let old2 = sal*0.2
+					$("#old2").text(old2)
+					
+					let yl1 = sal*0.02
+					$("#yl1").text(yl1)
+					let yl2 = sal*0.06
+					$("#yl2").text(yl2)
+					
+					let sy1 = sal*0.005
+					$("#sy1").text(sy1)
+					let sy2 = sal*0.015
+					$("#sy2").text(sy2)
+					
+					let gs = sal*0.005
+					$("#gs").text(gs)
+					
+					let sy = sal*0.008
+					$("#sy").text(sy)
+					
+					let gjj1 = sal*0.12
+					$("#gjj1").text(gjj1)
+					let gjj2 = sal*0.12
+					$("#gjj2").text(gjj2)
+					
+					let grhj = old1+yl1+sy1+gjj1
+					$("#grhj").text(grhj)
+					let gshj = old2+yl2+sy2+gs+sy+gjj2
+					$("#gshj").text(gshj)
+					$("#ze").text(grhj+gshj)
+					
+				})
+			})
+			</script>
+			
+	</head>
+	<body>
+		<div class="container">
+			<h3 class="text-danger text-center">社保计算器-Web版</h3>
+			<p class="text-center">太原工业学院&nbsp;&nbsp;电子工程系&nbsp;&nbsp;182027204李资政</p>
+			<div class="tableDiv container" >
+			    <table class="table table-bordered table-striped text-center">
+					<tr>
+						<td>工资</td>
+						<td colspan="3">
+							<input type="text" class="form-control" name="sal" id="sal" value="" />
+						</td>
+						<td>
+							<button type="button" id="btn" class="btn btn-danger">计算</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="bg-primary">险种</td>
+						<td class="bg-primary">个人%</td>
+						<td class="bg-primary">个人</td>
+						<td class="bg-primary">公司</td>
+						<td class="bg-primary">公司%</td>
+					</tr>
+					<tr>
+						<td>养老</td>
+						<td>8%</td>
+						<td id="old1"></td>
+						<td>20%</td>
+						<td id="old2"></td>
+					</tr>
+					<tr>
+						<td>医疗</td>
+						<td>2%</td>
+						<td id="yl1"></td>
+						<td>6%</td>
+						<td id="yl2"></td>
+					</tr>
+					<tr>
+						<td>失业</td>
+						<td>0.5%</td>
+						<td id="sy1"></td>
+						<td>1.5%</td>
+						<td id="sy2"></td>
+					</tr>
+					<tr>
+						<td>工伤</td>
+						<td></td>
+						<td></td>
+						<td>0.5%</td>
+						<td id="gs"></td>
+					</tr>
+					<tr>
+						<td>生育</td>
+						<td></td>
+						<td></td>
+						<td>0.8%</td>
+						<td id="sy"></td>
+					</tr>
+					<tr>
+						<td>公积金</td>
+						<td>12%</td>
+						<td id="gjj1"></td>
+						<td>12%</td>
+						<td id="gjj2"></td>
+					</tr>
+					<tr>
+						<td>合计</td>
+						<td>个人合计</td>
+						<td id=”grhj></td>
+						<td>公司合计</td>
+						<td id="gshj"></td>
+					</tr>
+					<tr>
+						<td>总额</td>
+						<td id="ze" colspan="4" style="font-size: 15pt; color：darkblue;font-weight:bold;"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
